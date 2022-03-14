@@ -1,5 +1,16 @@
 import axios from "axios"
 
+export const getUniversities = async (country) => {
+	try {
+		const response = await axios.get(
+			`http://universities.hipolabs.com/search?country=${country}`
+		)
+		return response.data
+	} catch (error) {
+		throw error
+	}
+}
+
 export const getPosts = async () => {
 	try {
 		const response = await axios.get(
