@@ -6,7 +6,7 @@ import Home from "./pages/Home/Home"
 import Header from "./pages/Header/Header"
 
 function App() {
-	console.log(data)
+
   return (
     <div className="App">
     <Header />
