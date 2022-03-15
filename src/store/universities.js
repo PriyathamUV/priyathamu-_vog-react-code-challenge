@@ -35,16 +35,15 @@ export default function universities(state = initialState, action) {
 }
 
 function* readUniversities(payload) {
-	console.log(payload)
 	try {
 		const universities = yield call(
 			apiService.getUniversities,
 			payload.payload
 		)
-		console.log(universities)
 		yield put({ type: actionTypes.RCV_UNIVERSITES, universities })
 	} catch (e) {
 		console.log(e)
+        throw e
 	}
 }
 

@@ -58,3 +58,12 @@ export const removePost = async (id) => {
 		throw error
 	}
 }
+
+export const getAreaDetails = async (code) => {
+	try {
+		const response = await axios.get(`https://api.zippopotam.us/us/${code}`)
+		return response.data
+	} catch (error) {
+		throw error
+	}
+}

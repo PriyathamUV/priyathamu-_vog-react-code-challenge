@@ -33,7 +33,6 @@ const initialState = {
 }
 
 export default function posts(state = initialState, action) {
-	console.log(state, action)
 	switch (action.type) {
 		case actionTypes.RCV_POSTS:
 			return {
@@ -78,38 +77,34 @@ export default function posts(state = initialState, action) {
 			const posts = yield call(apiService.getPosts)
 			yield put({ type: "RCV_POSTS", posts })
 		} catch (e) {
-			console.log(e)
+			throw e
 		}
 	}
 	
 	function* createPost(data) {
-		console.log(data)
 		try {
 			const response = yield call(apiService.addPost, data.payload)
-			console.log(response)
 			yield put({ type: "RCV_ADD_POST", response })
 		} catch (e) {
-			console.log(e)
+			throw e
 		}
 	}
 	
 	function* updatePost(data) {
 		try {
 			const response = yield call(apiService.editPost, data.payload)
-			console.log(response)
 			yield put({ type: "RCV_EDIT_POST", response })
 		} catch (e) {
-			console.log(e)
+			throw e
 		}
 	}
 	
 	function* deletePost(data) {
-		console.log(data)
 		try {
 			yield call(apiService.removePost, data.payload)
 			yield put({ type: "RCV_REMOVE_POST", id: data.payload })
 		} catch (e) {
-			console.log(e)
+			throw e
 		}
 	}
 	
