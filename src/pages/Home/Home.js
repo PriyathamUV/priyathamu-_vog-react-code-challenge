@@ -11,8 +11,6 @@ import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import Paper from "@mui/material/Paper"
 import InputBase from "@mui/material/InputBase"
-import IconButton from "@mui/material/IconButton"
-import SearchIcon from "@mui/icons-material/Search"
 import AddEditModal from "./AddEditModal/AddEditModal"
 
 const useStyles = makeStyles(() => ({
@@ -100,13 +98,7 @@ const Home = () => {
 								value={userId}
 								onChange={(e) => setUserId(e.target.value)}
 							/>
-							<IconButton
-								type="submit"
-								sx={{ p: "10px" }}
-								aria-label="search"
-							>
-								<SearchIcon />
-							</IconButton>
+							
 						</Paper>
 						<Button
 							size="small"
